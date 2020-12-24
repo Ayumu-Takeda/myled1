@@ -12,4 +12,4 @@
 
 led点灯方法：echo 1 > /dev/myled0 で点灯　echo 0 > /dev/myled0で消灯
                 
-ライセンス：GNU
+ライセンス：GNU General Public License v 3.0
