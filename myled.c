@@ -56,21 +56,22 @@ static int __init init_mod (void)
 
 
 
-	         printk(KERN_ERR "alloc_chrdev_region failed.\n");
-		 												  return retval;
-												                 }
+	        printk(KERN_ERR "alloc_chrdev_region failed.\n");
+		return retval;
+	          }
 												    	    
 		printk(KERN_INFO "%s is loaded.major:%d\n", __FILE__,MAJOR(dev));
-													                cdev_init(&cdv, &led_fops);
-		        cdv.owner = THIS_MODULE;							                retval = cdev_add(&cdv, dev, 1);																	    	    if (retval < 0) {
-            printk(KERN_ERR "cdev_add failed. major:%d, minor:%d",MAJOR(dev),MINOR(dev));
-													    return retval;															                		 			cls = class_create(THIS_MODULE,"myled");										   if(IS_ERR(cls)){						            printk(KERN_ERR"class_create failed.");	
+			cdev_init(&cdv, &led_fops);
+		        cdv.owner = THIS_MODULE;							           
+	                retval = cdev_add(&cdv, dev, 1);																	    	    if (retval < 0) {
+                printk(KERN_ERR "cdev_add failed. major:%d, minor:%d",MAJOR(dev),MINOR(dev));
+		return retval;															                		 			cls = class_create(THIS_MODULE,"myled");										   if(IS_ERR(cls)){						            printk(KERN_ERR"class_create failed.");	
 																										    return PTR_ERR(cls);
-																								       	    }
-													   device_create(cls, NULL, dev, NULL, "myled%d",MINOR(dev));
+                 }
+		device_create(cls, NULL, dev, NULL, "myled%d",MINOR(dev));
 															    	   
-	    return 0;
-	    }
+	        return 0;
+	         }
 
 static void __exit cleanup_mod(void)
 {
