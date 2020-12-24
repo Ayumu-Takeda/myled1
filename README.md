@@ -6,7 +6,7 @@
 
 使用した物：led(赤）、抵抗1個（200Ω）、ケーブル2本、ブレッドボード
 
-動画のリンク：「http://www.youtube.com/watch?v=nCTzosFBwT8]
+動画のリンク：「http://www.youtube.com/watch?v=nCTzosFBwT8」
 
 インストール方法：makeをし、エラーがないかを確認し、sudo insmod myled.koでカーネルモジュールをインストール
 
